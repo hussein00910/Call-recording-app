@@ -5,8 +5,8 @@ workflows:
     max_build_duration: 60
     environment:
       vars:
-        JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
-        ANDROID_SDK_ROOT: /opt/android-sdk
+        JAVA_HOME: /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+        ANDROID_SDK_ROOT: /usr/local/share/android-sdk
     scripts:
       - name: Clean Project
         script: ./gradlew clean
