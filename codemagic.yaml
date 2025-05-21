@@ -1,12 +1,12 @@
-
- workflows:
-     android-workflow:
-       name: Build Android APK
-       max_build_duration: 20
-       environment:
-         android:true
-       scripts:
-         - name:Build APK
-           script: ./gradlew assembleRelease
-       artifacts:
-         - app/build/outputs/**/*.apk
+workflows:
+  android-workflow:
+    name: Build Android APK
+    max_build_duration: 20
+    environment:
+      vars:
+        JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+    scripts:
+      - name: Build APK
+        script: ./gradlew assembleRelease
+    artifacts:
+      - app/build/outputs/**/*.apk
